@@ -1,18 +1,11 @@
-import { useState } from "react"
-import { Slider, SliderMark, SliderTrack, SliderFilledTrack, SliderThumb, Flex, Heading, Button } from '@chakra-ui/react'
+import { useState } from "react";
+import { Slider, SliderMark, SliderTrack, SliderFilledTrack, SliderThumb, Flex, Heading, Button } from '@chakra-ui/react';
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { QuantityProps } from "../Types/quiz-types";
 
-
-interface QuantityProps {
-    defaultValue: number;
-    max: number;
-    min: number;
-    step: number;
-    onClickNext: (amount: number) => void;
-}
 
 export function SetQuestQuantity(props: QuantityProps) {
-    const [sliderValue, setSliderValue] = useState<number>(props.defaultValue)
+    const [sliderValue, setSliderValue] = useState<number>(props.defaultValue);
 
     const renderMarks = (): JSX.Element[] => {
         const marks = [];
@@ -20,7 +13,7 @@ export function SetQuestQuantity(props: QuantityProps) {
             marks.push(<SliderMark marginLeft={-2} paddingTop={4} key={i} value={i}>{i}</SliderMark>)
         }
         return marks; //return an array of components
-    }
+    };
 
     return (
         <div>
@@ -55,6 +48,5 @@ export function SetQuestQuantity(props: QuantityProps) {
                 set category
             </Button>
         </div>
-
     )
 }

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FetchQuizCategoriesResp, FetchQuizParams, QuizCategory, QuizItem, FetchQuizResponse } from '../Types/quiz-types'
+import { FetchQuizCategoriesResp, FetchQuizParams, QuizCategory, QuizItem, FetchQuizResponse } from '../Types/quiz-types';
 
 
 //async function always return a promise!

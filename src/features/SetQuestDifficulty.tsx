@@ -1,10 +1,10 @@
-import { Flex, Heading, Button, RadioGroup, Radio, VStack } from '@chakra-ui/react'
+import { Flex, Heading, Button, RadioGroup, Radio, VStack } from '@chakra-ui/react';
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { useState } from 'react';
 import { QuizDifficulty } from '../Types/quiz-types';
 
 export function SetQuestDifficulty(props: { onClickNext: (difficulty: QuizDifficulty) => void }) {
-    const [difficulty, setDifficulty] = useState<QuizDifficulty>(QuizDifficulty.Mixed)
+    const [difficulty, setDifficulty] = useState<QuizDifficulty>(QuizDifficulty.Mixed);
 
     const radioList = Object.values(QuizDifficulty).map((difficulty: QuizDifficulty) => {
         return (
@@ -14,7 +14,8 @@ export function SetQuestDifficulty(props: { onClickNext: (difficulty: QuizDiffic
                 </span>
             </Radio>
         )
-    })
+    });
+
     return (
         <div>
             <Flex direction={"column"} alignItems={"center"}>

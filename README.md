@@ -1,30 +1,81 @@
-# React + TypeScript + Vite
+Quiz App
+==========
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple quiz application built using React, TypeScript, and Vite. The project is designed to test your knowledge while also showcasing modern web development practices. 
+This application was created as a learning project to deepen my understanding of working with multi-page applications and various React hooks.
 
-Currently, two official plugins are available:
+***
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Content
 
-## Expanding the ESLint configuration
+* [Demo](#demo)
+* [Features](#features)
+* [Technologies-Used](#technologies-used)
+* [Setup-And-Installation](#setup-and-installation)
+* [Learning-Outcomes](#learning-outcomes)
+* [Future-Improvements](#future-improvements)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+***
 
-- Configure the top-level `parserOptions` property like this:
+## Demo
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+![Front-Page](front-page.png)
+![Topics](topics.png)
+![Difficulty-Levels](levels.png)
+![Example-Question](question.png)
+![Final-Results](result.png)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+You can check out the live demo of the application [here](https://github.com/tanjazh/quiz-app.git).
+
+***
+
+## Features
+
+* Multiple choice quiz questions.
+* Dynamic scoring based on correct answers.
+* Multiple pages for different sections of the quiz.
+* State management using React hooks.
+* Feedback on quiz completion with scores and correct answers displayed.
+* Simple and intuitive UI design.
+
+***
+
+## Technologies Used
+
+* React.
+* TypeScript.
+* Vite.
+* React Router.
+* CSS Modules.
+
+***
+
+## Setup and Installation
+
+1. Clone the repository: `git clone https://github.com/tanjazh/quiz-app.git`
+2. Navigate to the project directory: `cd quiz-app`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
+5. Open your browser and navigate to http://localhost:3000 to view the app.
+
+***
+
+## Learning Outcomes
+
+By building this quiz app, I focused on:
+* Understanding how to structure and navigate multi-page applications in React using React Router.
+* Gaining proficiency in working with React hooks like useState and useEffect to manage state and side effects.
+* Learning how to integrate TypeScript into a React project for type-safe components and better development experience.
+* Setting up and configuring a Vite project for faster builds and an optimized development environment.
+* Exploring best practices in structuring components, managing state, and creating reusable UI elements.
+
+***
+
+## Future Improvements
+
+Some areas for future enhancements include:
+* Implementing a timer for each quiz question.
+* Enhancing the UI/UX with animations and better accessibility.
+* Saving quiz scores using local storage or integrating with a backend.
+
+***

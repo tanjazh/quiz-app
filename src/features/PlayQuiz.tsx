@@ -1,22 +1,22 @@
-import { useEffect, useState } from 'react'
-import { QuizItem } from '../Types/quiz-types'
-import { Flex, HStack, Heading, Radio, RadioGroup, SimpleGrid, Text, Box } from '@chakra-ui/react'
-import Lottie from 'lottie-react'
-import validAnim from '../assets/lottie/valid.json'
-import invalidAnim from '../assets/lottie/invalid.json'
+import { useEffect, useState } from 'react';
+import { QuizItem } from '../Types/quiz-types';
+import { Flex, HStack, Heading, Radio, RadioGroup, SimpleGrid, Text, Box } from '@chakra-ui/react';
+import Lottie from 'lottie-react';
+import validAnim from '../assets/lottie/valid.json';
+import invalidAnim from '../assets/lottie/invalid.json';
 
 export function PlayQuiz(props: { quiz: QuizItem[], onFinished: (displayProgress: boolean[]) => void }) {
-    const [currentQuizItemIndex, setCurrentQuizItemIndex] = useState<number>(0)
-    const currentQuizItem: QuizItem = props.quiz[currentQuizItemIndex]
-    const [answer, setAnswer] = useState<string>()
-    const [questionStatus, setQuestionStatus] = useState<"valid" | "invalid" | "unanswered">("unanswered")
-    const [history, setHistory] = useState<boolean[]>([])
+    const [currentQuizItemIndex, setCurrentQuizItemIndex] = useState<number>(0);
+    const currentQuizItem: QuizItem = props.quiz[currentQuizItemIndex];
+    const [answer, setAnswer] = useState<string>();
+    const [questionStatus, setQuestionStatus] = useState<"valid" | "invalid" | "unanswered">("unanswered");
+    const [history, setHistory] = useState<boolean[]>([]);
 
     const [availableAnswers, setAvailableAnswers] = useState<string[]>([])
     //gets triggered any time currentItem is updated
     useEffect(() => {
         setAvailableAnswers([currentQuizItem.correct_answer, ...currentQuizItem.incorrect_answers].sort(() => Math.random() - 0.5))
-    }, [currentQuizItemIndex])
+    }, [currentQuizItemIndex]);
 
     useEffect(() => {
         if (answer) {
@@ -33,7 +33,7 @@ export function PlayQuiz(props: { quiz: QuizItem[], onFinished: (displayProgress
 
     const isValidAnswer = (answer: string): boolean => {
         return answer === currentQuizItem.correct_answer
-    }
+    };
 
     const progressBar = () => {
         return (
@@ -53,7 +53,7 @@ export function PlayQuiz(props: { quiz: QuizItem[], onFinished: (displayProgress
                 })}
             </HStack>
         )
-    }
+    };
 
     const radioList = availableAnswers.map((availableAnswer: string) => {
         return <Radio
@@ -69,7 +69,7 @@ export function PlayQuiz(props: { quiz: QuizItem[], onFinished: (displayProgress
                 dangerouslySetInnerHTML={{ __html: availableAnswer }}></Text>
         </Radio>
 
-    })
+    });
 
     return (
         <Flex

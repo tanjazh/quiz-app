@@ -1,5 +1,4 @@
-import { Flex, Heading } from '@chakra-ui/react'
-import React from 'react'
+import { Flex, Heading } from '@chakra-ui/react';
 
 export function Score(props: { history: boolean[] }) {
 

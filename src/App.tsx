@@ -21,6 +21,7 @@ enum Step {
 
 export function App() {
   const [step, setStep] = useState<Step>(Step.SetQuestQuantity);
+
   //by setting initial value in useState, it prohibits from giving an error, that type is
   //undefined
   const [quizParams, setQuizParams] = useState<FetchQuizParams>({
@@ -29,7 +30,9 @@ export function App() {
     difficulty: QuizDifficulty.Mixed,
     type: QuizType.Multiple
   });
+
   const [category, setCategory] = useState<QuizCategory[]>([]);
+
   //useEffect is in charge of fetching the data from api
   // [] => renders once in the beginning
   useEffect(() => {
@@ -41,11 +44,11 @@ export function App() {
         console.log("Error fetching quiz categories:", error);
       }
     };
-
     fetchCategories();
   }, []);
-  const [quiz, setQuiz] = useState<QuizItem[]>([])
-  const [gameHistory, setGameHistory] = useState<boolean[]>([])
+
+  const [quiz, setQuiz] = useState<QuizItem[]>([]);
+  const [gameHistory, setGameHistory] = useState<boolean[]>([]);
 
   //make sure, that the response have enough data for the quiz
   //first we need to load quiz before we play, duh
@@ -111,7 +114,7 @@ export function App() {
       default:
         return null;
     }
-  }
+  };
 
   return (
     <div>

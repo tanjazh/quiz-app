@@ -40,3 +40,11 @@ export interface QuizItem {
     correct_answer: string,
     incorrect_answers: string[],
 }
+
+export interface QuantityProps {
+    defaultValue: number;
+    max: number;
+    min: number;
+    step: number;
+    onClickNext: (amount: number) => void;
+}

@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useState } from "react";
 import { QuizCategory } from '../Types/quiz-types';
-import { Flex, Heading, Button, SimpleGrid, RadioGroup, Radio } from '@chakra-ui/react'
+import { Flex, Heading, Button, SimpleGrid, RadioGroup, Radio } from '@chakra-ui/react';
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 export function SetQuestCategory(props: {
@@ -8,13 +8,13 @@ export function SetQuestCategory(props: {
   onClickNext: (categoryID: string) => void;
 }) {
 
-  const [selectedCategoryID, setSelectedCategoryID] = useState<string>(props.category[0].id.toString())
+  const [selectedCategoryID, setSelectedCategoryID] = useState<string>(props.category[0].id.toString());
 
 
   //since id=number and value expects string!
   const radioList = props.category.map((category: QuizCategory) => {
     return <Radio value={category.id.toString()} key={category.id} fontSize={"xs"}>{category.name}</Radio>
-  })
+  });
 
   return (
     <div>

@@ -2,7 +2,7 @@
   "name": "quiz-app-react-ts",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://tanjazh.github.io/quiz-app",
+  "homepage": "https://tanjazh.github.io/quiz-app/",
   "type": "module",
   "scripts": {
     "start": "vite",

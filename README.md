@@ -19,7 +19,6 @@ This application was created as a learning project to deepen my understanding of
 
 ## Demo
 
-![Front-Page](front-page.png)
 ![Topics](topics.png)
 ![Difficulty-Levels](levels.png)
 ![Example-Question](question.png)

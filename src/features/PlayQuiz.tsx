@@ -12,7 +12,8 @@ export function PlayQuiz(props: { quiz: QuizItem[], onFinished: (displayProgress
     const [questionStatus, setQuestionStatus] = useState<"valid" | "invalid" | "unanswered">("unanswered");
     const [history, setHistory] = useState<boolean[]>([]);
 
-    const [availableAnswers, setAvailableAnswers] = useState<string[]>([])
+    const [availableAnswers, setAvailableAnswers] = useState<string[]>([]);
+
     //gets triggered any time currentItem is updated
     useEffect(() => {
         setAvailableAnswers([currentQuizItem.correct_answer, ...currentQuizItem.incorrect_answers].sort(() => Math.random() - 0.5))
@@ -32,13 +33,13 @@ export function PlayQuiz(props: { quiz: QuizItem[], onFinished: (displayProgress
     }, [answer]);
 
     const isValidAnswer = (answer: string): boolean => {
-        return answer === currentQuizItem.correct_answer
+        return answer === currentQuizItem.correct_answer;
     };
 
     const progressBar = () => {
         return (
             <HStack>
-                {props.quiz.map((quizItem, i) => {
+                {props.quiz.map((_, i) => {
                     return <Box
                         key={i}
                         marginBottom={10}
@@ -68,7 +69,6 @@ export function PlayQuiz(props: { quiz: QuizItem[], onFinished: (displayProgress
                             : "red"}
                 dangerouslySetInnerHTML={{ __html: availableAnswer }}></Text>
         </Radio>
-
     });
 
     return (
@@ -104,7 +104,6 @@ export function PlayQuiz(props: { quiz: QuizItem[], onFinished: (displayProgress
                     } else {
                         props.onFinished(history)
                     }
-
                 }} />
         </Flex>
     )

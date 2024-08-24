@@ -25,7 +25,7 @@ This application was created as a learning project to deepen my understanding of
 ![Example-Question](question.png)
 ![Final-Results](result.png)
 
-You can check out the live demo of the application [here](https://github.com/tanjazh/quiz-app.git).
+You can check out the live demo of the application [here](https://tanjazh.github.io/quiz-app).
 
 ***
 
